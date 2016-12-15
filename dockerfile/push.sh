@@ -18,7 +18,7 @@
 # ------------------------------------------------------------------------
 set -e
 
-product_name=wso2esb
+product_name=wso2iot
 product_version=1.0.0
 
 prgdir=$(dirname "$0")
