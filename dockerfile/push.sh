@@ -18,10 +18,11 @@
 # ------------------------------------------------------------------------
 set -e
 
-product_name=wso2esb
+product_name=wso2iot
+product_version=1.0.0
 
 prgdir=$(dirname "$0")
 script_path=$(cd "$prgdir"; pwd)
 common_folder=$(cd "${script_path}/common/scripts/"; pwd)
 
-bash ${common_folder}/docker-push.sh -n ${product_name} $*
+bash ${common_folder}/docker-push.sh -n ${product_name} -v ${product_version} $*
