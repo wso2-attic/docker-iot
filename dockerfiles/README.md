@@ -66,7 +66,7 @@ in order to obtain latest bug fixes and updates for the product.
 
 ## How to update configurations
 Configurations would lie on the Docker host machine and they can be volume mounted to the container. <br>
-As an example, steps required to change the port offset of integrator profile using `carbon.xml` is as follows.
+As an example, steps required to change the port offset of iot-server profile using `carbon.xml` is as follows.
 
 ##### 1. Stop the iot-server container if it's already running.
 In WSO2 IoT 3.1.0 product distribution, carbon.xml file for the iot-server profile <br>
