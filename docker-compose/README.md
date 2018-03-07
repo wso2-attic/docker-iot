@@ -39,7 +39,7 @@
 
   7. Access management console via a web browser :
      ```
-     For Devicemgt - https://wso2iot-integrator:9443/devicemgt
-     For App Publisher - https://wso2iot-analytics:9444/publisher
+     For Devicemgt - https://wso2iot-server:9443/devicemgt
+     For App Publisher - https://wso2iot-server:9443/publisher
      ```
 
