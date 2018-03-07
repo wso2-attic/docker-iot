@@ -20,12 +20,6 @@
 # set to product base image
 FROM wso2iot-base:3.1.0
 
-# set dependant files directory
-ARG FILES=./files
-
-# copy mysql connector jar to product distribution
-COPY --chown=wso2carbon:wso2 ${FILES} ${WSO2_SERVER_HOME}/lib
-
 # expose IoT Server ports
 EXPOSE 8280 8243 9443
 

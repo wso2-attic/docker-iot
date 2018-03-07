@@ -29,16 +29,14 @@ services:
       timeout: 120s
       retries: 5
     depends_on:
-      mysql:
+      wso2iot-mysql:
         condition: service_healthy
     volumes:
       - ./broker/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/conf/datasources/master-datasources.xml
-      - ./broker/repository/conf/broker.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/conf/broker.xml
+      - ./broker/repository/conf/brokerxml:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/conf/broker.xml
       - ./broker/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/conf/user-mgt.xml
       - ./broker/repository/resources/security/client-truststore.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/repository/resources/security/client-truststore.jks
       - ./broker/repository/resources/security/wso2carbon.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/repository/resources/security/wso2carbon.jks
-    links:
-      - mysql
   wso2iot-analytics:
     image: dockerhub.wso2.com/wso2iot-analytics:3.1.0
     container_name: wso2iot-analytics
