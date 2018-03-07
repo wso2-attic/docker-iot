@@ -1,46 +1,45 @@
-# WSO2 API Manager deployment with WSO2 API Manager Analytics
-
-![alt tag](deployment-diagram.png)
+# WSO2 IoT Server and Broker with Analytics support
 
 ## Prerequisites
 
- * [Docker](https://www.docker.com/get-docker) and [Docker Compose](https://docs.docker.com/compose/install/#install-compose) are required for running this Docker Compose template.
+  * [Docker](https://www.docker.com/get-docker) and [Docker Compose](https://docs.docker.com/compose/install/#install-compose) are required to run this deployment.
 
-## Quick Start Guide
+## How to Run
 
-1. Build the WSO2 API manager 2.1.0 and API Manager Analytics 2.1.0 Docker images:
-     *  [WSO2 API Manager Dockerfile](../../dockerfiles/apim/README.md)
-     *  [WSO2 API Manager Analytics Dockerfile](../../dockerfiles/apim-analytics/README.md)
-    > In the `docker-compose.yml`, remove the `dockerhub.wso2.com/` prefix from the `image` name
-      
-    > For example, change the line `image: dockerhub.wso2.com/wso2am:2.1.0` to `image: wso2am:2.1.0`
-2. Pull MySQL Docker image:
+  1. Build IoT Server, Broker and Analytics Images using [Dockerfiles](../../dockerfiles/README.md)
+     > In the `docker-compose.yml`, remove the `dockerhub.wso2.com/` prefix from the `image` name
+            
+     > For example, change the line `image: dockerhub.wso2.com/wso2iot-server:3.1.0` to `image: wso2iot-server:3.1.0`
+  2. Pull MySQL Docker image :
      ```
-     docker pull mysql:5.7.19
+     docker pull mysql:5.7.20
      ```
 
-3. Switch to the docker-compose/apim-analytics folder:
-    ```
-    cd [docker-apim]/docker-compose/apim-analytics
-    ```
+  3. Download the latest Docker resources for the product from [releases](https://github.com/wso2/docker-iot/releases) 
+     page or clone this repository <br> to your local machine and switch to latest release tag.
+     
+     > Note that the local copy of `docker-iot` repository will be referred to as `[docker-iot]` from this point onwards.
 
-4. Execute the following Docker Compose command to start the deployment:
-    ```
-    docker-compose up
-    ```
+  4. Switch to docker-compose folder :
+     ```
+     cd [docker-iot]/docker-compose
+     ```
 
-5. Add the following entrie to the /etc/hosts.
-    ```
-    127.0.0.1 api-manager
-    ```
-6. Access the API Publisher and Store via the URLs given below.
+  5. Before to start deployment process, add a host entry pointing to the Docker host machine IP address. <br>
+     For an example if the Docker host is accessible via 127.0.0.1 on a Linux or Mac machine, add <br>
+     following entry to /etc/hosts file :
+     ```
+     127.0.0.1 wso2iot-server wso2iot-analytics wso2iot-broker
+     ```
+     
+  6. Execute following Docker Compose command to start the deployment :
+     ```
+     docker-compose up
+     ```
 
-    * API Publisher
-    ```
-    https://api-manager:9443/publisher
-    ```
+  7. Access management console via a web browser :
+     ```
+     For Devicemgt - https://wso2iot-integrator:9443/devicemgt
+     For App Publisher - https://wso2iot-analytics:9444/publisher
+     ```
 
-    * API Store
-    ```
-    https://api-manager:9443/store/
-    ```
