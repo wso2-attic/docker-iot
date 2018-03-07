@@ -1,0 +1,45 @@
+{
+    "appName": "WSO2 IoT Server",
+    "cachingEnabled": false,
+    "debuggingEnabled": false,
+    "permissionRoot": "/",
+    "portalURL": "https://172.28.128.6:9445",
+    "loginPage": "cdmf.page.sign-in",
+    "adminServicesUrl": "https://172.28.128.5:9443/admin/services/",
+    "authModule": {
+        "enabled": true,
+        "login": {
+            "onSuccess": {
+                "script": "/app/modules/login.js",
+                "page": "cdmf.page.processing"
+            },
+            "onFail": {
+                "script": "/app/modules/login.js",
+                "page": "cdmf.page.sign-in"
+            }
+        },
+        "logout": {
+            "onSuccess": {
+                "page": "cdmf.page.sign-in"
+            },
+            "onFail": {
+                "page": "cdmf.page.dashboard"
+            }
+        },
+        "sso": {
+            "enabled": true,
+            "issuer" : "devicemgt",
+            "appName" : "devicemgt",
+            "identityProviderUrl" : "https://172.28.128.5:9443/samlsso",
+            "acs" : "https://172.28.128.5:9443/devicemgt/uuf/sso/acs",
+            "identityAlias": "wso2carbon",
+            "responseSigningEnabled" : true,
+            "validateAssertionValidityPeriod": true,
+            "validateAudienceRestriction": true,
+            "assertionSigningEnabled": true
+        }
+    },
+    "errorPages": {
+        "default": "uuf.page.error"
+    }
+}
