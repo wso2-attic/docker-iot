@@ -20,7 +20,7 @@ git clone https://github.com/wso2/docker-iot.git
 2. Add JDK, WSO2 IoT distribution and required libraries
 - Download [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and
 extract into `<DOCKERFILE_HOME>/base/files`.
-- Download [WSO2 Enterprise Integrator 6.1.1 distribution](https://wso2.com/iot) and 
+- Download [WSO2 IoT 3.1.0 distribution](https://wso2.com/iot) and 
 extract into `<DOCKERFILE_HOME>/base/files`.
 - Once both JDK and WSO2 IoT distribution is extracted, it should be as follows:
 ```
