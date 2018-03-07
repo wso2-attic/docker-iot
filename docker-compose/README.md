@@ -22,7 +22,7 @@
 
   4. Switch to docker-compose folder :
      ```
-     cd [docker-iot]/docker-compose
+     cd docker-iot/docker-compose
      ```
 
   5. Before to start deployment process, add a host entry pointing to the Docker host machine IP address. <br>
