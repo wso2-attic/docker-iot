@@ -10,7 +10,7 @@
     "ssoConfiguration" : {
         "enabled" : "true",
         "issuer" : "API_STORE",
-        "identityProviderUrl" : "https://172.28.128.5:9443/samlsso",
+        "identityProviderUrl" : "https://localhost:9443/samlsso",
         "keyStorePassword" : "",
         "identityAlias" : "",
         "responseSigningEnabled":"true",
@@ -23,18 +23,18 @@
     "oidcConfiguration" : {
       "enabled" : "false",
       "issuer" : "API_STORE",
-      "identityProviderUrl" : "https://172.28.128.5:9443/samlsso",
-      "authorizationEndpointURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/authorize",
-      "tokenEndpointURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/token",
-      "userInfoURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/userinfo",
-      "jwksURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/jwk",
+      "identityProviderUrl" : "https://localhost:9443/samlsso",
+      "authorizationEndpointURI" : "http://localhost:8080/openid-connect-server-webapp/authorize",
+      "tokenEndpointURI" : "http://localhost:8080/openid-connect-server-webapp/token",
+      "userInfoURI" : "http://localhost:8080/openid-connect-server-webapp/userinfo",
+      "jwksURI" : "http://localhost:8080/openid-connect-server-webapp/jwk",
       "clientConfiguration" : {
         "clientId" : "client_am_store",
         "clientSecret" : "secret",
         "responseType" : "code",
         "authorizationType" : "authorization_code",
         "scope" : "phone email address openid profile",
-        "redirectURI" : "https://172.28.128.5:9443/api-store/jagg/jaggery_oidc_acs.jag",
+        "redirectURI" : "https://localhost:9443/api-store/jagg/jaggery_oidc_acs.jag",
         "clientAlgorithm" : "RS256"
       }
     },

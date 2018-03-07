@@ -3,9 +3,9 @@
     "cachingEnabled": false,
     "debuggingEnabled": false,
     "permissionRoot": "/",
-    "portalURL": "https://172.28.128.6:9445",
+    "portalURL": "https://wso2iot-analytics:9445",
     "loginPage": "cdmf.page.sign-in",
-    "adminServicesUrl": "https://172.28.128.5:9443/admin/services/",
+    "adminServicesUrl": "https://localhost:9443/admin/services/",
     "authModule": {
         "enabled": true,
         "login": {
@@ -30,8 +30,8 @@
             "enabled": true,
             "issuer" : "devicemgt",
             "appName" : "devicemgt",
-            "identityProviderUrl" : "https://172.28.128.5:9443/samlsso",
-            "acs" : "https://172.28.128.5:9443/devicemgt/uuf/sso/acs",
+            "identityProviderUrl" : "https://localhost:9443/samlsso",
+            "acs" : "https://localhost:9443/devicemgt/uuf/sso/acs",
             "identityAlias": "wso2carbon",
             "responseSigningEnabled" : true,
             "validateAssertionValidityPeriod": true,

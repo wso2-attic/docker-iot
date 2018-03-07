@@ -18,7 +18,7 @@
           "validateAssertionValidityPeriod": true,
           "validateAudienceRestriction": true,
           "assertionSigningEnabled": true,
-          "acs" : "https://172.28.128.5:9443/portal/acs",
+          "acs" : "https://localhost:9443/portal/acs",
           "identityAlias": "wso2carbon",
           "defaultNameIDPolicy": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
           "useTenantKey": false,
@@ -42,7 +42,7 @@
               "clientName": "portal",
               "owner": "admin",
               "password":"admin",
-              "dynamicClientAppRegistrationServiceURL": "https://172.28.128.5:9443/dynamic-client-web/register",
+              "dynamicClientAppRegistrationServiceURL": "https://localhost:9443/dynamic-client-web/register",
               "apiManagerClientAppRegistrationServiceURL": "%https.host%/api-application-registration/register/tenants",
               "grantType": "password refresh_token urn:ietf:params:oauth:grant-type:saml2-bearer urn:ietf:params:oauth:grant-type:jwt-bearer",
               "tokenScope": "admin",
@@ -50,7 +50,7 @@
               "saasApp":true,
               "samlGrantTypeName":"urn:ietf:params:oauth:grant-type:saml2-bearer"
             },
-            "tokenServiceURL": "https://172.28.128.5:9443/oauth2/token"
+            "tokenServiceURL": "https://localhost:9443/oauth2/token"
           },
           "adminUser":"admin@carbon.super",
           "adminUserTenantId":"-1234",
@@ -86,7 +86,7 @@
     "password": "admin"
   },
   "host": {
-    "hostname": "172.28.128.5",
+    "hostname": "localhost",
     "port": "",
     "protocol": ""
   },
