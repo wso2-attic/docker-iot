@@ -26,7 +26,7 @@ ARG FILES=./files
 # copy mysql connector jar to product distribution
 COPY --chown=wso2carbon:wso2 ${FILES} ${WSO2_SERVER_HOME}/lib
 
-# expose integrator ports
+# expose IoT Server ports
 EXPOSE 8280 8243 9443
 
 # set entrypoint to integrator startup script
