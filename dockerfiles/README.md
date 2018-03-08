@@ -54,7 +54,7 @@ in order to obtain latest bug fixes and updates for the product.
 - For broker,
     + `docker run -p 9446:9446 -p 5675:5675 wso2iot-broker:3.1.0`
 - For iot-server,
-    + `docker run -p 9443:9443 -p 9612:9612 -p 9712:9712 wso2iot-server:3.1.0`
+    + `docker run -p 9443:9443 wso2iot-server:3.1.0`
 
 6. Accessing management consoles.
 - For Devicemgt,
