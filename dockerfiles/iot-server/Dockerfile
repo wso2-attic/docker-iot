@@ -1,7 +1,7 @@
-#!/bin/bash
+
 # ------------------------------------------------------------------------
 #
-# Copyright 2016 WSO2, Inc. (http://wso2.com)
+# Copyright 2017 WSO2, Inc. (http://wso2.com)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License
-
+#
 # ------------------------------------------------------------------------
-set -e
 
-product_name=wso2iot
+# set to product base image
+FROM wso2iot-base:3.1.0
 
-prgdir=$(dirname "$0")
-script_path=$(cd "$prgdir"; pwd)
-common_folder=$(cd "${script_path}/common/scripts/"; pwd)
+# expose IoT Server ports
+EXPOSE 8280 8243 9443
 
-bash ${common_folder}/docker-run.sh -n ${product_name} -p 8280:8280 -p 8243:8243 -p 9763:9763 -p 9443:9443 $*
+# set entrypoint to integrator startup script
+ENTRYPOINT ${WSO2_SERVER_HOME}/bin/iot-server.sh

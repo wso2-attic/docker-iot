@@ -1,7 +1,7 @@
-#!/bin/bash
+
 # ------------------------------------------------------------------------
 #
-# Copyright 2016 WSO2, Inc. (http://wso2.com)
+# Copyright 2017 WSO2, Inc. (http://wso2.com)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License
-
+#
 # ------------------------------------------------------------------------
-set -e
 
-product_name=wso2esb
+# set to product base image
+FROM wso2iot-base:3.1.0
 
-prgdir=$(dirname "$0")
-script_path=$(cd "$prgdir"; pwd)
-common_folder=$(cd "${script_path}/common/scripts/"; pwd)
+# expose analytics ports
+EXPOSE 9445 9612 9712 7612 7712
 
-bash ${common_folder}/docker-push.sh -n ${product_name} $*
+# set entrypoint to analytics startup script
+ENTRYPOINT ${WSO2_SERVER_HOME}/bin/analytics.sh
