@@ -22,37 +22,41 @@ MAINTAINER WSO2 Docker Maintainers "dev@wso2.org"
 
 # set user configurations
 ARG USER=wso2carbon
-ARG USER_ID=802
 ARG USER_GROUP=wso2
-ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
 # set dependant files directory
 ARG FILES=./files
-# set jdk configurations
-ARG JDK=jdk1.8.0*
-ARG JAVA_HOME=${USER_HOME}/java
 # set wso2 product configurations
 ARG WSO2_SERVER=wso2iot
 ARG WSO2_SERVER_VERSION=3.1.0
-ARG WSO2_SERVER_PACK=${WSO2_SERVER}-${WSO2_SERVER_VERSION}
+ARG WSO2_SERVER_PACK=${WSO2_SERVER}-${WSO2_SERVER_VERSION}.zip
 ARG WSO2_SERVER_HOME=${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}
+# set jdk configurations
+ARG JDK_ARCHIVE=jdk-8u*-linux-x64.tar.gz
+ARG JAVA_HOME=${USER_HOME}/java
 
 # install required packages
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends --no-install-suggests \
-    netcat && \
+    unzip telnet iproute2 curl && \
     rm -rf /var/lib/apt/lists/*
 
 # create a user group and a user
-RUN groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} && \
-    useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USER}
+RUN groupadd --system ${USER_GROUP} && \
+    useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP} ${USER}
 
 # copy the jdk and wso2 product distribution zip files to user's home directory
-COPY --chown=wso2carbon:wso2 ${FILES}/${JDK} ${USER_HOME}/java
-COPY --chown=wso2carbon:wso2 ${FILES}/${WSO2_SERVER_PACK}/ ${USER_HOME}/${WSO2_SERVER_PACK}/
+COPY ${FILES}/${JDK_ARCHIVE} ${FILES}/${WSO2_SERVER_PACK} ${USER_HOME}/
+COPY ${FILES}/mysql-connector-java-*-bin.jar ${WSO2_SERVER_HOME}/lib/mysql-connector-java-*-bin.jar
 
-# copy the kafka client libraries
-COPY --chown=wso2carbon:wso2 ${FILES}/mysql-connector-java-5.1.45-bin.jar ${USER_HOME}/${WSO2_SERVER_PACK}/lib/
+# install the jdk, wso2 server, remove distributions and set folder permissions
+RUN mkdir -p ${JAVA_HOME} && \
+    tar -xf ${USER_HOME}/${JDK_ARCHIVE} -C ${JAVA_HOME} --strip-components=1 && \
+    unzip -q ${USER_HOME}/${WSO2_SERVER_PACK} -d ${USER_HOME}/ && \
+    rm ${USER_HOME}/${JDK_ARCHIVE} && \
+    rm ${USER_HOME}/${WSO2_SERVER_PACK} && \
+    chown -R ${USER}:${USER_GROUP} ${USER_HOME} && \
+    chmod -R g=u ${USER_HOME}
 
 # set the user and work directory
 USER ${USER}
