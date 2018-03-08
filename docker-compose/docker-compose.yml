@@ -17,7 +17,7 @@ services:
       timeout: 60s
       retries: 5
   wso2iot-broker:
-    image: dockerhub.wso2.com/wso2iot-broker:3.1.0
+    image: wso2iot-broker:3.1.0
     container_name: wso2iot-broker
     hostname: wso2iot-broker
     ports:
@@ -38,7 +38,7 @@ services:
       - ./broker/repository/resources/security/client-truststore.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/repository/resources/security/client-truststore.jks
       - ./broker/repository/resources/security/wso2carbon.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/repository/resources/security/wso2carbon.jks
   wso2iot-analytics:
-    image: dockerhub.wso2.com/wso2iot-analytics:3.1.0
+    image: wso2iot-analytics:3.1.0
     container_name: wso2iot-analytics
     hostname: wso2iot-analytics
     healthcheck:
@@ -57,7 +57,7 @@ services:
       - "9612:9612"
       - "9712:9712"
   wso2iot-server:
-    image: dockerhub.wso2.com/wso2iot-server:3.1.0
+    image: wso2iot-server:3.1.0
     container_name: wso2iot-server
     hostname: wso2iot-server
     healthcheck:
@@ -65,6 +65,9 @@ services:
       interval: 10s
       timeout: 120s
       retries: 5
+    depends_on:
+      wso2iot-analytics:
+        condition: service_healthy
     volumes:
       - ./iot-server/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.1.0/conf/datasources/master-datasources.xml
       - ./iot-server/repository/conf/api-manager.xml:/home/wso2carbon/wso2iot-3.1.0/conf/api-manager.xml
