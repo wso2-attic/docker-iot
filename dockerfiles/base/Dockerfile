@@ -48,11 +48,11 @@ RUN groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} && \
     useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USER}
 
 # copy the jdk and wso2 product distribution zip files to user's home directory
-COPY ${FILES}/${JDK} ${USER_HOME}/java
-COPY ${FILES}/${WSO2_SERVER_PACK}/ ${USER_HOME}/${WSO2_SERVER_PACK}/
+COPY --chown=wso2carbon:wso2 ${FILES}/${JDK} ${USER_HOME}/java
+COPY --chown=wso2carbon:wso2 ${FILES}/${WSO2_SERVER_PACK}/ ${USER_HOME}/${WSO2_SERVER_PACK}/
 
 # copy the kafka client libraries
-COPY ${FILES}/mysql-connector-java-5.1.45-bin.jar ${USER_HOME}/${WSO2_SERVER_PACK}/lib/
+COPY --chown=wso2carbon:wso2 ${FILES}/mysql-connector-java-5.1.45-bin.jar ${USER_HOME}/${WSO2_SERVER_PACK}/lib/
 
 # set the user and work directory
 USER ${USER}
