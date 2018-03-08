@@ -16,7 +16,7 @@ services:
       timeout: 60s
       retries: 5
   wso2iot-broker:
-    image: wso2iot-broker:3.1.0
+    image: dockerhub.wso2.com/wso2iot-broker:3.1.0
     container_name: wso2iot-broker
     hostname: wso2iot-broker
     ports:
@@ -34,10 +34,8 @@ services:
       - ./broker/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/conf/datasources/master-datasources.xml
       - ./broker/repository/conf/broker.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/conf/broker.xml
       - ./broker/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/conf/user-mgt.xml
-#      - ./broker/repository/resources/security/client-truststore.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/repository/resources/security/client-truststore.jks
-#      - ./broker/repository/resources/security/wso2carbon.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/broker/repository/resources/security/wso2carbon.jks
   wso2iot-analytics:
-    image: wso2iot-analytics:3.1.0
+    image: dockerhub.wso2.com/wso2iot-analytics:3.1.0
     container_name: wso2iot-analytics
     hostname: wso2iot-analytics
     healthcheck:
@@ -53,12 +51,10 @@ services:
       - ./analytics/repository/conf/datasources/analytics-datasources.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/analytics/conf/datasources/analytics-datasources.xml
       - ./analytics/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/analytics/repository/conf/user-mgt.xml
       - ./analytics/repository/conf/carbon.xml:/home/wso2carbon/wso2iot-3.1.0/wso2/analytics/repository/conf/carbon.xml
-#      - ./broker/repository/resources/security/client-truststore.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/analytics/repository/resources/security/client-truststore.jks
-#      - ./broker/repository/resources/security/wso2carbon.jks:/home/wso2carbon/wso2iot-3.1.0/wso2/analytics/resources/security/wso2carbon.jks
     ports:
       - "9445:9445"
   wso2iot-server:
-    image: wso2iot-server:3.1.0
+    image: dockerhub.wso2.com/wso2iot-server:3.1.0
     container_name: wso2iot-server
     hostname: wso2iot-server
     healthcheck:
@@ -78,13 +74,9 @@ services:
       - ./iot-server/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.1.0/conf/user-mgt.xml
       - ./iot-server/repository/conf/etc/webapp-publisher-config.xml:/home/wso2carbon/wso2iot-3.1.0/conf/etc/webapp-publisher-config.xml
       - ./iot-server/repository/conf/identity/sso-idp-config.xml:/home/wso2carbon/wso2iot-3.1.0/conf/identity/sso-idp-config.xml
-#      - ./iot-server/repository/conf/identity/identity-providers/iot_default.xml:/home/wso2carbon/wso2iot-3.1.0/conf/identity/identity-providers/iot_default.xml
       - ./iot-server/repository/deployment/server/jaggeryapps/api-store/site/conf/site.json:/home/wso2carbon/wso2iot-3.1.0/repository/deployment/server/jaggeryapps/api-store/site/conf/site.json
       - ./iot-server/repository/deployment/server/jaggeryapps/devicemgt/app/conf/app-conf.json:/home/wso2carbon/wso2iot-3.1.0/repository/deployment/server/jaggeryapps/devicemgt/app/conf/app-conf.json
       - ./iot-server/repository/deployment/server/jaggeryapps/portal/configs/designer.json:/home/wso2carbon/wso2iot-3.1.0/repository/deployment/server/jaggeryapps/portal/configs/designer.json
-#      - ./iot-server/repository/resources/security/client-truststore.jks:/home/wso2carbon/wso2iot-3.1.0/repository/resources/security/client-truststore.jks
-#      - ./iot-server/repository/resources/security/wso2carbon.jks:/home/wso2carbon/wso2iot-3.1.0/repository/resources/security/wso2carbon.jks
-#      - ./iot-server/repository/resources/security/wso2certs.jks:/home/wso2carbon/wso2iot-3.1.0/repository/resources/security/wso2certs.jks
       - ./iot-server/bin/iot-server.sh:/home/wso2carbon/wso2iot-3.1.0/bin/iot-server.sh
     ports:
       - "9443:9443"
