@@ -124,7 +124,7 @@
     -->
     <Analytics>
         <!-- Enable Analytics for API Manager -->
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
 
         <!-- Server URL of the remote DAS/CEP server used to collect statistics. Must
              be specified in protocol://hostname:port/ format.
@@ -136,7 +136,7 @@
 
              Ex - Multiple Receiver Groups with two receivers each
              {tcp://localhost:7612/,tcp://localhost:7613},{tcp://localhost:7712/,tcp://localhost:7713/} -->
-        <DASServerURL>{tcp://wso2iot-analytics:7613}</DASServerURL>
+        <DASServerURL>{tcp://localhost:7613}</DASServerURL>
         <!--DASAuthServerURL>{ssl://localhost:7712}</DASAuthServerURL-->
         <!-- Administrator username to login to the remote DAS server. -->
         <DASUsername>${admin.username}</DASUsername>
@@ -147,7 +147,7 @@
         <StatsProviderImpl>org.wso2.carbon.apimgt.usage.client.impl.APIUsageStatisticsRdbmsClientImpl</StatsProviderImpl>
 
         <!-- DAS REST API configuration -->
-        <DASRestApiURL>https://wso2iot-analytics:9445</DASRestApiURL>
+        <DASRestApiURL>https://localhost:9445</DASRestApiURL>
         <DASRestApiUsername>${admin.username}</DASRestApiUsername>
         <DASRestApiPassword>${admin.password}</DASRestApiPassword>
 
