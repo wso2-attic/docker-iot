@@ -18,7 +18,7 @@
 # ------------------------------------------------------------------------
 
 # set to product base image
-FROM wso2iot-base:3.1.0
+FROM wso2iot-base:3.2.0
 
 # expose IoT Server ports
 EXPOSE 8280 8243 9443
