@@ -50,7 +50,6 @@ services:
       - ./analytics/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/analytics/conf/datasources/master-datasources.xml
       - ./analytics/repository/conf/datasources/analytics-datasources.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/analytics/conf/datasources/analytics-datasources.xml
       - ./analytics/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/analytics/repository/conf/user-mgt.xml
-      - ./analytics/repository/conf/carbon.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/analytics/repository/conf/carbon.xml
     ports:
       - "9445:9445"
   wso2iot-server:
