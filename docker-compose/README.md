@@ -7,9 +7,9 @@
 ## How to Run
 
   1. Build IoT Server, Broker and Analytics Images using [Dockerfiles](../../dockerfiles/README.md)
-     > In the `docker-compose.yml`, remove the `dockerhub.wso2.com/` prefix from the `image` name
+     > In the `docker-compose.yml`, remove the `docker.wso2.com/` prefix from the `image` name
             
-     > For example, change the line `image: dockerhub.wso2.com/wso2iot-server:3.1.0` to `image: wso2iot-server:3.1.0`
+     > For example, change the line `image: docker.wso2.com/wso2iot-server:3.2.0` to `image: wso2iot-server:3.2.0`
   2. Pull MySQL Docker image :
      ```
      docker pull mysql:5.7.20
