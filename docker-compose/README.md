@@ -9,7 +9,7 @@
   * If you wish to run the Docker Compose setup using Docker images built locally, build IoT Server, Broker,
    Analytics Images using [Dockerfiles](../dockerfiles/README.md) and remove the `docker.wso2.com/` prefix 
    from the `image` name In the `docker-compose.yml`. For example, change the line `image: docker.wso2.com/wso2iot-server:3.2.0` 
-   to `image: wso2iot-server:3.2.0`. <br><br>
+   to <br> `image: wso2iot-server:3.2.0`. <br><br>
 
 ## How to Run
 
