@@ -19,17 +19,17 @@
      ```
      > Note that the local copy of `docker-iot` repository will be referred to as `[docker-iot]` from this point onwards.
 
-  2. Switch to docker-compose folder :
+  2. Switch to `docker-compose` folder.
      ```
      cd docker-iot/docker-compose
      ```
 
-  3. Execute following Docker Compose command to start the deployment :
+  3. Execute following Docker Compose command to start the deployment.
      ```
      docker-compose up
      ```
 
-  4. Access management console via a web browser :
+  4. Access management console via a web browser.
      ```
      For Devicemgt - https://localhost:9443/devicemgt
      For App Publisher - https://localhost:9443/publisher
