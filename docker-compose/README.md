@@ -17,12 +17,17 @@
      ```
       git clone https://github.com/wso2/docker-iot
      ```
-     > Note that the local copy of `docker-iot` repository will be referred to as `[docker-iot]` from this point onwards.
+     > If you are to try out an already released zip of this repo, please ignore this 1st step.
 
   2. Switch to `docker-compose` folder.
      ```
      cd docker-iot/docker-compose
      ```
+    > If you are to try out an already released zip of this repo, please ignore this 2nd step also. 
+     Instead, extract the zip file and directly browse to `docker-iot-<released-version-here>docker-compose` folder.
+     
+    > If you want to try out an already released tag, after executing 2nd step, checkout the relevant tag, 
+     i.e. for example: git checkout tags/v3.2.0.1 and continue below steps.
 
   3. Execute following Docker Compose command to start the deployment.
      ```
