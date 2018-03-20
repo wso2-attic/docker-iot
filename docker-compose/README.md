@@ -23,11 +23,11 @@
      ```
      cd docker-iot/docker-compose
      ```
-    > If you are to try out an already released zip of this repo, please ignore this 2nd step also. 
-     Instead, extract the zip file and directly browse to `docker-iot-<released-version-here>docker-compose` folder.
+     > If you are to try out an already released zip of this repo, please ignore this 2nd step also. 
+      Instead, extract the zip file and directly browse to `docker-iot-<released-version-here>docker-compose` folder.
      
-    > If you want to try out an already released tag, after executing 2nd step, checkout the relevant tag, 
-     i.e. for example: git checkout tags/v3.2.0.1 and continue below steps.
+     > If you want to try out an already released tag, after executing 2nd step, checkout the relevant tag, 
+      i.e. for example: git checkout tags/v3.2.0.1 and continue below steps.
 
   3. Execute following Docker Compose command to start the deployment.
      ```
