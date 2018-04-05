@@ -18,7 +18,7 @@
 # ------------------------------------------------------------------------
 
 # set to product base image
-FROM wso2iot-base:3.2.0
+FROM wso2iot-base:3.3.0
 
 # expose analytics ports
 EXPOSE 9445 9612 9712 7612 7712

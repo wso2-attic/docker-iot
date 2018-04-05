@@ -8,8 +8,8 @@
    from WSO2 since the referring Docker images hosted at docker.wso2.com contains the latest updates and fixes for WSO2 IoT Server. You can sign up for a Free Trial Subscription [here](https://wso2.com/free-trial-subscription). <br><br>
   * If you wish to run the Docker Compose setup using Docker images built locally, build IoT Server, Broker,
    Analytics Images using [Dockerfiles](../dockerfiles/README.md) and remove the `docker.wso2.com/` prefix 
-   from the `image` name In the <br> `docker-compose.yml`. For example, change the line `image: docker.wso2.com/wso2iot-server:3.2.0` 
-   to <br> `image: wso2iot-server:3.2.0`. <br><br>
+   from the `image` name In the <br> `docker-compose.yml`. For example, change the line `image: docker.wso2.com/wso2iot-server:3.3.0` 
+   to <br> `image: wso2iot-server:3.3.0`. <br><br>
 
 ## How to Run
 
@@ -27,7 +27,7 @@
       Instead, extract the zip file and directly browse to `docker-iot-<released-version-here>docker-compose` folder.
      
      > If you want to try out an already released tag, after executing 2nd step, checkout the relevant tag, 
-      i.e. for example: git checkout tags/v3.2.0.1 and continue below steps.
+      i.e. for example: git checkout tags/v3.3.0.1 and continue below steps.
 
   3. Execute following Docker Compose command to start the deployment.
      ```

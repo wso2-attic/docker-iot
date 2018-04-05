@@ -27,7 +27,9 @@
     <!--Admin username/password - this is to use for oauth token generation-->
     <Username>admin</Username>
     <Password>admin</Password>
-    <DynamicClientRegistrationEndpoint>https://localhost:9443/client-registration/v0.11/register</DynamicClientRegistrationEndpoint>
+
+    <!--Dynamic client registration endpoint-->
+    <DynamicClientRegistrationEndpoint>https://localhost:9443/client-registration/v0.12/register</DynamicClientRegistrationEndpoint>
 
     <!--Oauth token endpoint-->
     <OauthTokenEndpoint>https://localhost:9443/oauth2/token</OauthTokenEndpoint>
@@ -36,3 +38,4 @@
         <ContextPath>/services</ContextPath>
     </APIS>
 </ServerConfiguration>
+

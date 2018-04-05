@@ -16,7 +16,7 @@ services:
       timeout: 60s
       retries: 5
   wso2iot-broker:
-    image: docker.wso2.com/wso2iot-broker:3.2.0
+    image: docker.wso2.com/wso2iot-broker:3.3.0
     container_name: wso2iot-broker
     hostname: wso2iot-broker
     ports:
@@ -31,11 +31,11 @@ services:
       wso2iot-mysql:
         condition: service_healthy
     volumes:
-      - ./broker/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/broker/conf/datasources/master-datasources.xml
-      - ./broker/repository/conf/broker.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/broker/conf/broker.xml
-      - ./broker/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/broker/conf/user-mgt.xml
+      - ./broker/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.3.0/wso2/broker/conf/datasources/master-datasources.xml
+      - ./broker/repository/conf/broker.xml:/home/wso2carbon/wso2iot-3.3.0/wso2/broker/conf/broker.xml
+      - ./broker/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.3.0/wso2/broker/conf/user-mgt.xml
   wso2iot-analytics:
-    image: docker.wso2.com/wso2iot-analytics:3.2.0
+    image: docker.wso2.com/wso2iot-analytics:3.3.0
     container_name: wso2iot-analytics
     hostname: wso2iot-analytics
     healthcheck:
@@ -47,13 +47,13 @@ services:
       wso2iot-mysql:
         condition: service_healthy
     volumes:
-      - ./analytics/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/analytics/conf/datasources/master-datasources.xml
-      - ./analytics/repository/conf/datasources/analytics-datasources.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/analytics/conf/datasources/analytics-datasources.xml
-      - ./analytics/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.2.0/wso2/analytics/repository/conf/user-mgt.xml
+      - ./analytics/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.3.0/wso2/analytics/conf/datasources/master-datasources.xml
+      - ./analytics/repository/conf/datasources/analytics-datasources.xml:/home/wso2carbon/wso2iot-3.3.0/wso2/analytics/conf/datasources/analytics-datasources.xml
+      - ./analytics/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.3.0/wso2/analytics/repository/conf/user-mgt.xml
     ports:
       - "9445:9445"
   wso2iot-server:
-    image: docker.wso2.com/wso2iot-server:3.2.0
+    image: docker.wso2.com/wso2iot-server:3.3.0
     container_name: wso2iot-server
     hostname: wso2iot-server
     healthcheck:
@@ -65,19 +65,20 @@ services:
       wso2iot-mysql:
         condition: service_healthy
     volumes:
-      - ./iot-server/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.2.0/conf/datasources/master-datasources.xml
-      - ./iot-server/repository/conf/app-manager.xml:/home/wso2carbon/wso2iot-3.2.0/conf/app-manager.xml
-      - ./iot-server/repository/conf/carbon.xml:/home/wso2carbon/wso2iot-3.2.0/conf/carbon.xml
-      - ./iot-server/repository/conf/api-manager.xml:/home/wso2carbon/wso2iot-3.2.0/conf/api-manager.xml
-      - ./iot-server/repository/conf/iot-api-config.xml:/home/wso2carbon/wso2iot-3.2.0/conf/iot-api-config.xml
-      - ./iot-server/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.2.0/conf/user-mgt.xml
-      - ./iot-server/repository/conf/etc/webapp-publisher-config.xml:/home/wso2carbon/wso2iot-3.2.0/conf/etc/webapp-publisher-config.xml
-      - ./iot-server/repository/conf/identity/sso-idp-config.xml:/home/wso2carbon/wso2iot-3.2.0/conf/identity/sso-idp-config.xml
-      - ./iot-server/repository/deployment/server/jaggeryapps/api-store/site/conf/site.json:/home/wso2carbon/wso2iot-3.2.0/repository/deployment/server/jaggeryapps/api-store/site/conf/site.json
-      - ./iot-server/repository/deployment/server/jaggeryapps/devicemgt/app/conf/app-conf.json:/home/wso2carbon/wso2iot-3.2.0/repository/deployment/server/jaggeryapps/devicemgt/app/conf/app-conf.json
-      - ./iot-server/repository/deployment/server/jaggeryapps/portal/configs/designer.json:/home/wso2carbon/wso2iot-3.2.0/repository/deployment/server/jaggeryapps/portal/configs/designer.json
-      - ./iot-server/bin/iot-server.sh:/home/wso2carbon/wso2iot-3.2.0/bin/iot-server.sh
+      - ./iot-server/repository/conf/datasources/master-datasources.xml:/home/wso2carbon/wso2iot-3.3.0/conf/datasources/master-datasources.xml
+      - ./iot-server/repository/conf/app-manager.xml:/home/wso2carbon/wso2iot-3.3.0/conf/app-manager.xml
+      - ./iot-server/repository/conf/carbon.xml:/home/wso2carbon/wso2iot-3.3.0/conf/carbon.xml
+      - ./iot-server/repository/conf/api-manager.xml:/home/wso2carbon/wso2iot-3.3.0/conf/api-manager.xml
+      - ./iot-server/repository/conf/iot-api-config.xml:/home/wso2carbon/wso2iot-3.3.0/conf/iot-api-config.xml
+      - ./iot-server/repository/conf/user-mgt.xml:/home/wso2carbon/wso2iot-3.3.0/conf/user-mgt.xml
+      - ./iot-server/repository/conf/etc/webapp-publisher-config.xml:/home/wso2carbon/wso2iot-3.3.0/conf/etc/webapp-publisher-config.xml
+      - ./iot-server/repository/conf/identity/sso-idp-config.xml:/home/wso2carbon/wso2iot-3.3.0/conf/identity/sso-idp-config.xml
+      - ./iot-server/repository/deployment/server/jaggeryapps/api-store/site/conf/site.json:/home/wso2carbon/wso2iot-3.3.0/repository/deployment/server/jaggeryapps/api-store/site/conf/site.json
+      - ./iot-server/repository/deployment/server/jaggeryapps/devicemgt/app/conf/app-conf.json:/home/wso2carbon/wso2iot-3.3.0/repository/deployment/server/jaggeryapps/devicemgt/app/conf/app-conf.json
+      - ./iot-server/repository/deployment/server/jaggeryapps/portal/configs/designer.json:/home/wso2carbon/wso2iot-3.3.0/repository/deployment/server/jaggeryapps/portal/configs/designer.json
+      - ./iot-server/bin/iot-server.sh:/home/wso2carbon/wso2iot-3.3.0/bin/iot-server.sh
     ports:
       - "9443:9443"
     links:
       - wso2iot-mysql
+

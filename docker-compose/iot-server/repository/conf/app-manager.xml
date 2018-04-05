@@ -307,7 +307,7 @@
         <CreateServiceProviderForSkipGatewayApps>false</CreateServiceProviderForSkipGatewayApps>
 
         <!-- URL of the IDP use for SSO -->
-        <IdentityProviderUrl>https://wso2iot-server:9443/samlsso</IdentityProviderUrl>
+        <IdentityProviderUrl>https://localhost:9443/samlsso</IdentityProviderUrl>
 
         <!-- Postfix of the ACS URL -->
         <ACSURLPostfix>appm/acs</ACSURLPostfix>
