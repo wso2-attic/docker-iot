@@ -307,7 +307,7 @@
         <CreateServiceProviderForSkipGatewayApps>false</CreateServiceProviderForSkipGatewayApps>
 
         <!-- URL of the IDP use for SSO -->
-        <IdentityProviderUrl>https://172.28.128.5:9443/samlsso</IdentityProviderUrl>
+        <IdentityProviderUrl>https://localhost:9443/samlsso</IdentityProviderUrl>
 
         <!-- Postfix of the ACS URL -->
         <ACSURLPostfix>appm/acs</ACSURLPostfix>
