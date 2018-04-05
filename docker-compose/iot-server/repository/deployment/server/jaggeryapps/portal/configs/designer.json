@@ -18,7 +18,7 @@
           "validateAssertionValidityPeriod": true,
           "validateAudienceRestriction": true,
           "assertionSigningEnabled": true,
-          "acs" : "https://localhost:9443/portal/acs",
+          "acs": "https://localhost:9443/portal/acs",
           "identityAlias": "wso2carbon",
           "defaultNameIDPolicy": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
           "useTenantKey": false,
