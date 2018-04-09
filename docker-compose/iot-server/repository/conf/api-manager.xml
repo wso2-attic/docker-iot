@@ -49,7 +49,7 @@
         <SignatureAlgorithm>SHA256withRSA</SignatureAlgorithm>
 
         <!-- This parameter specifies which implementation should be used for generating the Token. JWTGenerator is the
-	     default implementation provided. -->
+         default implementation provided. -->
         <!--JWTGeneratorImpl>org.wso2.carbon.apimgt.keymgt.token.JWTGenerator</JWTGeneratorImpl-->
 
         <!-- This parameter specifies which implementation should be used for generating the Token. For URL safe JWT
@@ -61,8 +61,8 @@
     </JWTConfiguration>
 
     <!-- Primary/secondary login configuration for APIstore. If user likes to keep two login attributes in a distributed setup, to login the APIstore,
-		he should configure this section. Primary login doesn't have a claimUri associated with it. But secondary login, which is a claim attribute,
-		is associated with a claimuri.-->
+        he should configure this section. Primary login doesn't have a claimUri associated with it. But secondary login, which is a claim attribute,
+        is associated with a claimuri.-->
     <!--LoginConfig>
             <UserIdLogin  primary="true">
         <ClaimUri></ClaimUri>
@@ -136,7 +136,7 @@
 
              Ex - Multiple Receiver Groups with two receivers each
              {tcp://localhost:7612/,tcp://localhost:7613},{tcp://localhost:7712/,tcp://localhost:7713/} -->
-        <DASServerURL>{tcp://localhost:7613}</DASServerURL>
+        <DASServerURL>{tcp://localhost:7612}</DASServerURL>
         <!--DASAuthServerURL>{ssl://localhost:7712}</DASAuthServerURL-->
         <!-- Administrator username to login to the remote DAS server. -->
         <DASUsername>${admin.username}</DASUsername>
@@ -147,7 +147,7 @@
         <StatsProviderImpl>org.wso2.carbon.apimgt.usage.client.impl.APIUsageStatisticsRdbmsClientImpl</StatsProviderImpl>
 
         <!-- DAS REST API configuration -->
-        <DASRestApiURL>https://localhost:9445</DASRestApiURL>
+        <DASRestApiURL>https://localhost:9444</DASRestApiURL>
         <DASRestApiUsername>${admin.username}</DASRestApiUsername>
         <DASRestApiPassword>${admin.password}</DASRestApiPassword>
 
@@ -200,10 +200,10 @@
         API key validator configuration used by API key manager (IS), API store and API gateway.
         API gateway uses it to validate and authenticate users against the provided API keys.
     -->
-    <APIKeyValidator><!-- Server URL of the API key manager --><ServerURL>https://localhost:${mgt.transport.https.port}${carbon.context}services/</ServerURL>
+    <APIKeyValidator>
+    <!-- Server URL of the API key manager -->
+    <ServerURL>https://localhost:9443${carbon.context}services/</ServerURL>
         
-        <ServerURL>https://${iot.keymanager.host}:${iot.keymanager.https.port}${carbon.context}services/</ServerURL>
-
         <!-- Admin username for API key manager. -->
         <Username>${admin.username}</Username>
         <!-- Admin password for API key manager. -->
@@ -215,7 +215,7 @@
              -If you are at the Gateway node, you need to point "ThriftClientPort" value to the "ThriftServerPort" value given at KeyManager node.
              -If you need to start two API Manager instances in the same machine, you need to give different ports to "ThriftServerPort" value in two nodes.
              -ThriftServerHost - Allows to configure a hostname for the thrift server. It uses the carbon hostname by default.
-	         -The Gateway uses this parameter to connect to the key validation thrift service. -->
+             -The Gateway uses this parameter to connect to the key validation thrift service. -->
         <KeyValidatorClientType>WSClient</KeyValidatorClientType>
         <ThriftClientConnectionTimeOut>10000</ThriftClientConnectionTimeOut>
         <!--ThriftClientPort>10397</ThriftClientPort-->
