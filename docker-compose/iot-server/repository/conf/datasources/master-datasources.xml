@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
   ~ WSO2 Inc. licenses this file to you under the Apache License,
   ~ Version 2.0 (the "License"); you may not use this file except
@@ -20,6 +20,7 @@
     <providers>
         <provider>org.wso2.carbon.ndatasource.rdbms.RDBMSDataSourceReader</provider>
     </providers>
+
     <datasources>
         <datasource>
             <name>WSO2_CARBON_DB</name>
@@ -105,7 +106,6 @@
                 </configuration>
             </definition>
         </datasource>
-
         <datasource>
             <name>JAGH2</name>
             <description>The datasource used for by the Jaggery Storage Manager</description>
@@ -123,7 +123,6 @@
                 </configuration>
             </definition>
         </datasource>
-
         <datasource>
             <name>WSO2_SOCIAL_DB</name>
             <description>The datasource used for Store social database</description>
