@@ -16,7 +16,7 @@ services:
       timeout: 60s
       retries: 5
   wso2iot-broker:
-    image: wso2iot-broker:3.3.0
+    image: docker.wso2.com/wso2iot-broker:3.3.0
     container_name: wso2iot-broker
     hostname: wso2iot-broker
     ports:
@@ -33,7 +33,7 @@ services:
     volumes:
       - ./broker:/home/wso2carbon/volumes/wso2/broker
   wso2iot-analytics:
-    image: wso2iot-analytics:3.3.0
+    image: docker.wso2.com/wso2iot-analytics:3.3.0
     container_name: wso2iot-analytics
     hostname: wso2iot-analytics
     healthcheck:
@@ -49,7 +49,7 @@ services:
     ports:
       - "9445:9445"
   wso2iot-server:
-    image: wso2iot-server:3.3.0
+    image: docker.wso2.com/wso2iot-server:3.3.0
     container_name: wso2iot-server
     hostname: wso2iot-server
     healthcheck:
