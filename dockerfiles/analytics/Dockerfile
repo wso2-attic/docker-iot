@@ -20,8 +20,10 @@
 # set to product base image
 FROM wso2iot-base:3.3.0
 
+# copy entrypoint bash script to user home
+COPY --chown=wso2carbon:wso2 init.sh ${WORKING_DIRECTORY}/
+
 # expose analytics ports
 EXPOSE 9445 9612 9712 7612 7712
 
-# set entrypoint to analytics startup script
-ENTRYPOINT ${WSO2_SERVER_HOME}/bin/analytics.sh
+ENTRYPOINT ["/home/wso2carbon/init.sh"]
