@@ -20,8 +20,11 @@
 # set to product base image
 FROM wso2iot-base:3.3.0
 
+# copy entrypoint bash script to user home
+COPY --chown=wso2carbon:wso2 init.sh ${WORKING_DIRECTORY}/
+
 # expose IoT Server ports
 EXPOSE 8280 8243 9443
 
-# set entrypoint to integrator startup script
-ENTRYPOINT ${WSO2_SERVER_HOME}/bin/iot-server.sh
+ENTRYPOINT ["/home/wso2carbon/init.sh"]
+
