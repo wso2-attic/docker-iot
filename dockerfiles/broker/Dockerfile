@@ -20,8 +20,11 @@
 # set to product base image
 FROM wso2iot-base:3.3.0
 
+# copy entrypoint bash script to user home
+COPY --chown=wso2carbon:wso2 init.sh ${WORKING_DIRECTORY}/
+
 # expose broker ports
 EXPOSE 9446 5675 8675 1886 8836 7614
 
-# set entrypoint to broker startup script
-ENTRYPOINT ${WSO2_SERVER_HOME}/bin/broker.sh
+ENTRYPOINT ["/home/wso2carbon/init.sh"]
+
